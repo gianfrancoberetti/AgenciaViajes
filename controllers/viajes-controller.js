@@ -10,13 +10,13 @@ class ViajeController {
         return rta
     }
 
-    async findById(id){
-        const rta = await models.Viaje.findByPk(id)
-        if(!rta){
-            console.log(error)
-        }
+    async findOne(slug){
+        const rta = await models.Viaje.findOne({where: {slug}})
         return rta
     }
 
 
 }
+
+
+module.exports = ViajeController

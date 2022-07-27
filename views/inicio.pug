@@ -1,6 +1,29 @@
 extends ./layout/index
 
+block slider
+    .slider
+        h1 Rio de Janeiro
+        em Aventura
+
 block contenido
     main.container.mt-5
-        .row
-            h1=pagina
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col.md-6
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eros ex, mollis non urna et, varius pretium eros. Vestibulum vitae dolor at lacus facilisis posuere. Morbi varius erat at lorem venenatis, dignissim lacinia felis consectetur. Donec eget lacinia libero. Nullam in gravida tortor. Suspendisse potenti. Pellentesque fermentum ipsum in ante auctor, non condimentum velit consequat
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eros ex, mollis non urna et, varius pretium eros. Vestibulum vitae dolor at lacus facilisis posuere. Morbi varius erat at lorem venenatis, dignissim lacinia felis consectetur. Donec eget lacinia libero. Nullam in gravida tortor. Suspendisse potenti. Pellentesque fermentum ipsum in ante auctor, non condimentum velit consequat
+            .col.md-6
+                img(src="/img/inicio_nosotros.jpg", alt="acerca de nosotros", class="img-fluid")
+
+            include ./layout/block-viajes
+
+    .descuento
+        .container
+            .row
+                .col.md-6
+                    .contenido
+                        h3 5% de descuento
+                        p.titulo Viaje a Canada 
+                        p.fecha 5 de agosto de 2022 - 15 de agosto de 2022
+                        p.precio $5000 USD 
+                        

@@ -2,5 +2,43 @@ extends ./layout/index
 
 block contenido
     main.container.mt-5
+        h1.text-center.mt-5 #{pagina}
         .row
-            h1=pagina
+            
+            .col-md-12
+                h2.d-block.w-100.text-center Dejanos tu comentario
+
+                if(errores)
+                    each error in errores
+                        .alert.col.alert-danger.text-center=error.mensaje
+
+
+
+            .row.justify-content-center.col
+                .col.md-8
+                    form(action="/testimoniales" method="POST") 
+                        .form-group
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder="tu nombre", name="nombre", class="form-control", value = nombre)
+                        .form-group
+                            label(for="correo") Correo electronico 
+                            input#correo(type="text", placeholder="tu correo", name="correo", class="form-control", value = correo)
+                        .form-group
+                            label(for="mensaje") mensaje 
+                            input#mensaje(type="text", placeholder="tu mensaje", name="mensaje", class="form-control", rows=3, value = mensaje)
+                        input.btn.btn-success.btn-block(type="submit")
+
+
+            .row
+        
+            .row.testimoniales
+                each testimonial in testimoniales
+                    .col-md-6.col-lg-4.mb-4
+                        .card
+                            .card-body
+                                blockquote.blockquote 
+                                p.mb-0
+                                    | #{testimonial.mensaje}
+                                footer.blockquote-footer
+                                    | #{testimonial.nombre}
+

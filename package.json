@@ -10,12 +10,13 @@
     "migrations:run": "sequelize-cli db:migrate",
     "migrations:revert": "sequelize-cli db:migrate:undo --name"
   },
-
   "author": "Gianfranco Beretti",
   "license": "ISC",
   "dependencies": {
+    "@hapi/boom": "^10.0.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "joi": "^17.6.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "pug": "^3.0.2",

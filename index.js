@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(express.json())
-
+app.use(express.urlencoded({extended: true}))
 // obtener el ano actual
 
 app.use((req, res, next) =>{
@@ -29,6 +29,7 @@ app.set('view engine', 'pug');
 // definir carpeta public 
 
 app.use(express.static('public'));
+app.use('/viajes', express.static('public'));
 
 
 routerApi(app)
